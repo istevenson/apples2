@@ -1,0 +1,55 @@
+<!-- Header -->
+      <div id="header">
+
+        <!-- Inner -->
+          <div class="inner">
+            <header>
+              <h1 id="name">ApplesToo</h1>
+              <hr />
+              <span class="byline">Your favorite game is now online</span>
+            </header>
+            <footer>
+              <% if current_player %>
+                <%= link_to "Play", new_game_path, :class => "button circled scrolly" %>
+              <% else %>
+                <%= link_to "Join", new_player_registration_path(), :class => "button circled scrolly" %>
+              <% end %>
+            </footer>
+          </div>
+  <!-- Nav -->
+    <nav id="nav">
+      <ul>
+        <li><a href="#banner">How to Play</a></li>
+        <!-- <li>
+          <span>Dropdown</span>
+          <ul>
+            <li><a href="#">Lorem ipsum dolor</a></li>
+            <li><a href="#">Magna phasellus</a></li>
+            <li><a href="#">Etiam dolore nisl</a></li>
+            <li>
+              <span>And a submenu &hellip;</span>
+              <ul>
+                <li><a href="#">Lorem ipsum dolor</a></li>
+                <li><a href="#">Phasellus consequat</a></li>
+                <li><a href="#">Magna phasellus</a></li>
+                <li><a href="#">Etiam dolore nisl</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Veroeros feugiat</a></li>
+          </ul>
+        </li>
+        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+        <li><a href="no-sidebar.html">No Sidebar</a></li> -->
+      </ul>
+    </nav>
+
+  </div>
+
+  <!-- Banner -->
+    <div id="banner">
+      <h2>How to play <strong>ApplesToo</strong></h2>
+      <span class="byline">
+        There are two decks of cards: Things, which are red, and Descriptions, which are green. During any given round, each player should have seven red cards. Each round, there is one player who is "active". This player chooses the top card from the green deck and displays it to the other players. The other players pick from the red cards they have and choose one which they think best represents or relates to the green card of the round. The "active" player in the round does not submit any of their red cards. After all other players have submitted their cards, the "active" player will reveal them all and choose the card they like best. The player who submitted the chosen card will get one point. The first player to reach 5 points wins.
+      </span>
+    </div>
