@@ -1,0 +1,19 @@
+<nav id="nav">
+  <ul>
+    <li><a href="">ApplesToo</a></li>
+  </ul>
+</nav>
+<div id="chooser_body">
+  <!-- <a class="option" id="option" href="">Player</a> -->
+  <!-- <a class="option" id="option" href="">Chooser</a> -->
+  <%= link_to "Chooser", chooser_path(@game.secret_id), :class => "option", :id => "option" %>
+  <%= link_to "Player", player_path(@game.secret_id), :class => "option" %>
+
+  <!-- link_to new_gam -->
+
+  <!-- <a class="option" href=<%= %> >Player</a>
+  <a class="option" href="" >Chooser</a> -->
+  <!-- <a class="option" href="">Player</a>
+  <a class="option" href="">Chooser</a> -->
+</div>
+

@@ -1,3 +1,10 @@
+<div class="sign_up_links">
+  <ul class="sign_up_links">
+    <li class="sign_up_links"><a class="sign_up_links" href="/login">Login</a></li>
+    <li class="sign_up_links"><a class="sign_up_links" href="/signup">Sign Up</a></li>
+  </ul>
+</div>
+
 <!-- Header -->
       <div id="header">
 
@@ -5,14 +12,14 @@
           <div class="inner">
             <header>
               <h1 id="name">ApplesToo</h1>
-              <hr />
+
               <span class="byline">Your favorite game is now online</span>
             </header>
             <footer>
               <% if current_player %>
-                <%= link_to "Play", new_game_path, :class => "button circled scrolly" %>
+                <%= link_to "Play", join_path, :class => "button circled scrolly" %>
               <% else %>
-                <%= link_to "Join", new_player_registration_path(), :class => "button circled scrolly" %>
+                <%= link_to "Play", new_player_session_path, :class => "button circled scrolly" %>
               <% end %>
             </footer>
           </div>
@@ -20,6 +27,7 @@
     <nav id="nav">
       <ul>
         <li><a href="#banner">How to Play</a></li>
+
         <!-- <li>
           <span>Dropdown</span>
           <ul>
@@ -50,6 +58,41 @@
     <div id="banner">
       <h2>How to play <strong>ApplesToo</strong></h2>
       <span class="byline">
-        There are two decks of cards: Things, which are red, and Descriptions, which are green. During any given round, each player should have seven red cards. Each round, there is one player who is "active". This player chooses the top card from the green deck and displays it to the other players. The other players pick from the red cards they have and choose one which they think best represents or relates to the green card of the round. The "active" player in the round does not submit any of their red cards. After all other players have submitted their cards, the "active" player will reveal them all and choose the card they like best. The player who submitted the chosen card will get one point. The first player to reach 5 points wins.
+        There are two decks of cards: Things, which are red, and Descriptions, which are green. During any given round, each player has seven red cards. Each round, there is one player who is  the "chooser". This player selects the top card from the green deck and displays it to the other players. The other players pick from the red cards they have and click the one which they think best represents, or relates to the green card of the round. The "chooser" in the round does not submit any of their red cards. After all other players have submitted their cards, the "chooser" will reveal all submitted cards and choose the card they like best. The player who submitted the chosen card will get one point. The first player to reach 5 points wins.
       </span>
     </div>
+
+    <!-- Footer -->
+      <div id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="12u">
+
+              <!-- Contact -->
+                <section class="contact">
+                  <header>
+                    <!-- <h3>Nisl turpis nascetur interdum?</h3>
+                  </header>
+                  <p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p> -->
+                  <ul class="icons">
+                    <li><a href="#" class="fa fa-twitter solo"><span>Twitter</span></a></li>
+                    <li><a href="#" class="fa fa-facebook solo"><span>Facebook</span></a></li>
+                    <li><a href="#" class="fa fa-google-plus solo"><span>Google+</span></a></li>
+                    <li><a href="#" class="fa fa-pinterest solo"><span>Pinterest</span></a></li>
+                    <li><a href="#" class="fa fa-dribbble solo"><span>Dribbble</span></a></li>
+                    <li><a href="#" class="fa fa-linkedin solo"><span>Linkedin</span></a></li>
+                  </ul>
+                </section>
+
+              <!-- Copyright -->
+                <div class="copyright">
+                  <ul class="menu">
+                    <li>&copy; ApplesToo. All rights reserved.</li>
+                  </ul>
+                </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>

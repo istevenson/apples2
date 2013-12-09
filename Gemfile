@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem "handlebars_assets"
+# gem "handlebars_assets"
 
-gem "backbone-on-rails", "~> 1.1.0.0"
+# gem "backbone-on-rails", "~> 1.1.0.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'

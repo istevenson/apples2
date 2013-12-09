@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203192904) do
+ActiveRecord::Schema.define(version: 20131207205047) do
 
   create_table "games", force: true do |t|
     t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "secret_id"
+    t.integer  "green_card_id"
   end
 
   create_table "green_cards", force: true do |t|
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20131203192904) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "game_id"
   end
 
   add_index "players", ["email"], name: "index_players_on_email", unique: true

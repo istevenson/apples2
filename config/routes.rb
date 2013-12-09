@@ -1,15 +1,38 @@
 Applestoo::Application.routes.draw do
-  devise_for :players
+  # devise_for :players
+  devise_for :players, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup'}
+  # devise_for :players, :controllers => {:sessions => 'devise/sessions'}, :skip => [:sessions] do
+  #   get 'login' => 'devise/sessions#new', :as => :new_player_session
+  #   post 'login' => 'devise/sessions#create', :as => :player_session
+  #   get 'logout' => 'devise/sessions#destroy', :as => :destroy_player_session
+  #   get 'register' => 'devise/registrations#new', :as => :new_player_registration
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   root 'home#index'
 
-  get '/join' => 'players#create'
-  post '/join' => 'players#create'
 
-  resources :games
-  resources :green_cards
+
+  get '/join' => 'players#show'
+  post '/join' => 'players#show'
+  # get '/join' => 'games#create'
+  # get '/chooser/:secret_id' =>
+  # get '/player/:secret_id' => 'games#show'
+  # get '/games/:secret_id' => 'games#show'
+
+  # get '/games/:secret_id', to: 'games#create'
+  # post '/games/:secret_id', to: 'games#create'
+  # get '/games', to: 'games#show', as: :new_game
+  get '/chooser/:secret_id', to: 'games#chooser', as: :chooser
+  post '/chooser/:secret_id', to: 'games#chooser'
+
+  get '/player/:secret_id', to: 'games#game_player', as: :player
+  post '/player/:secret_id', to: 'games#game_player'
+
+
+  # resources :games
+  # resources :green_cards
 
   # get '/game/:secret_id' => 'games#show'
   # get '/game/:secret_id' => 'games#join'

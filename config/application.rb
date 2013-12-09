@@ -21,5 +21,3 @@ module Applestoo
     # config.i18n.default_locale = :de
   end
 end
-
-HandlebarsAssets::Config.template_namespace = 'JST'

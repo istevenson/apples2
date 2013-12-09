@@ -1,5 +1,5 @@
 class Game < ActiveRecord::Base
-  has_many :players, through: :plays
+  has_many :players
   has_many :rounds
   before_create :generate_secret_id
 

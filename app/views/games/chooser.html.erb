@@ -1,0 +1,68 @@
+
+
+
+<nav id="nav">
+  <ul>
+    <li><a href="">ApplesToo</a></li>
+  </ul>
+</nav>
+<div id="game_body">
+  <div id="send_link">
+  <div id="choose_card">Choose Green Card</div>
+  <div id="round_card_reveal">
+    <div id="green_card">
+      <div id="green_clickable"><% current_card = get_random_green %>
+        <h3> <%= current_card.adjective %></h3>
+        <%=image_tag("green_apple4.png", size: "100x100", alt: "Green Apple", class: "green_apple")%>
+        <p><%= current_card.description %></p>
+        <script>
+          var round_card = <%= current_card %>
+          writeRoundCard(round_card)
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <a href="" id="overlay_trigger"><span>Get Player Link</span></a>
+  <div id="overlay2">
+    <p>Copy this link: <input type="text" id="url_link"/></p>
+  </div>
+ -->
+ <!-- Footer -->
+   <div id="footer" class="chooser">
+     <div class="container">
+       <div class="row">
+         <div class="12u">
+
+           <!-- Contact -->
+             <section class="contact">
+               <header>
+                 <!-- <h3>Nisl turpis nascetur interdum?</h3>
+               </header>
+               <p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p> -->
+               <ul class="icons">
+                 <li><a href="#" class="fa fa-twitter solo"><span>Twitter</span></a></li>
+                 <li><a href="#" class="fa fa-facebook solo"><span>Facebook</span></a></li>
+                 <li><a href="#" class="fa fa-google-plus solo"><span>Google+</span></a></li>
+                 <li><a href="#" class="fa fa-pinterest solo"><span>Pinterest</span></a></li>
+                 <li><a href="#" class="fa fa-dribbble solo"><span>Dribbble</span></a></li>
+                 <li><a href="#" class="fa fa-linkedin solo"><span>Linkedin</span></a></li>
+               </ul>
+             </section>
+
+           <!-- Copyright -->
+             <div class="copyright">
+               <ul class="menu">
+                 <li>&copy; ApplesToo. All rights reserved.</li>
+               </ul>
+             </div>
+
+         </div>
+
+       </div>
+     </div>
+   </div>
+

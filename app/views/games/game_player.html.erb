@@ -1,0 +1,95 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<nav id="nav">
+  <ul>
+    <li><a href="">ApplesToo</a></li>
+  </ul>
+</nav>
+<div id="game_body">
+  <div id="game_board">
+    <ul id="scoreboard">
+    <!--   <h3>Scoreboard</h3>
+      <li>player:  0</li>
+      <li>player:  3</li> -->
+    </ul>
+  </div>
+  <!-- <div id="player_score">
+    <div id="my_points">3</div>
+  </div> -->
+  <div id="round_card">
+    <div id="green_card">
+      <!-- <% current_card = get_random_green %> -->
+      <h3> </h3>
+      <%=image_tag("green_apple4.png", size: "100x100", alt: "Green Apple", class: "green_apple")%>
+      <p></p>
+    </div>
+  </div>
+  <div id="player_body">
+    <ul id="red_cards">
+      <li class="player_hand">
+        <div class="red_clickable"> <% current_red = get_random_red %>
+        <h3><%= current_red.noun %></h3>
+        <%=image_tag("red_apple4.png", size: "50x50", alt: "Red Apple", class: "red_apple")%>
+        <p><%= current_red.description %></p>
+        </div>
+      </li>
+
+      <li class="player_hand">
+        <div class="red_clickable"> <% current_red = get_random_red %>
+        <h3><%= current_red.noun %></h3>
+        <%=image_tag("red_apple4.png", size: "50x50", alt: "Red Apple", class: "red_apple")%>
+        <p><%= current_red.description %></p>
+        </div>
+      </li>
+
+      <li class="player_hand">
+        <div class="red_clickable"> <% current_red = get_random_red %>
+        <h3><%= current_red.noun %></h3>
+        <%=image_tag("red_apple4.png", size: "50x50", alt: "Red Apple", class: "red_apple")%>
+        <p><%= current_red.description %></p>
+        </div>
+      </li>
+
+      <li class="player_hand">
+        <div class="red_clickable"> <% current_red = get_random_red %>
+        <h3><%= current_red.noun %></h3>
+        <%=image_tag("red_apple4.png", size: "50x50", alt: "Red Apple", class: "red_apple")%>
+        <p><%= current_red.description %></p>
+        </div>
+      </li>
+
+      <li class="player_hand">
+        <div class="red_clickable"> <% current_red = get_random_red %>
+        <h3><%= current_red.noun %></h3>
+        <%=image_tag("red_apple4.png", size: "50x50", alt: "Red Apple", class: "red_apple")%>
+        <p><%= current_red.description %></p>
+        </div>
+      </li>
+
+      <li class="player_hand">
+        <div class="red_clickable"> <% current_red = get_random_red %>
+        <h3><%= current_red.noun %></h3>
+        <%=image_tag("red_apple4.png", size: "50x50", alt: "Red Apple", class: "red_apple")%>
+        <p><%= current_red.description %></p>
+        </div>
+      </li>
+
+      <li class="player_hand">
+        <div class="red_clickable"> <% current_red = get_random_red %>
+        <h3><%= current_red.noun %></h3>
+        <%=image_tag("red_apple4.png", size: "50x50", alt: "Red Apple", class: "red_apple")%>
+        <p><%= current_red.description %></p>
+        </div>
+      </li>
+
+      <li class="player_hand">
+        <div class="red_clickable"> <% current_red = get_random_red %>
+        <h3><%= current_red.noun %></h3>
+        <%=image_tag("red_apple4.png", size: "50x50", alt: "Red Apple", class: "red_apple")%>
+        <p><%= current_red.description %></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+

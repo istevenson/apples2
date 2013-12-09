@@ -1,23 +1,25 @@
 class PlayersController < ApplicationController
 
-  def create
-    @player = Player.new(players_params)
+  def show
+    @player = current_player
     new_game = false
-    if !@player.plays.has_key?(:game_id)
+    if @player
       @game = Game.create
-      game_id = @game_id
-      new_game = true
-    else
-      game_id = params[:game_id]
+      game_id = @game.id
+      @player[:game_id] = game_id
     end
 
-    @player[:game_id] = game_id
-    @player.save
 
-    if new_game
-      render :json => {:new_game_id => @game.secret_id}
+
+    if @player.save
+      # link_to player_
+      # redirect_to :controller => 'games', :action => 'chooser'
+      # render :json => {:new_game_id => @game.secret_id}
+
     end
   end
+
+
 
   # def join
   #   @player = Player.new(players_params)
@@ -28,6 +30,8 @@ class PlayersController < ApplicationController
 
   private
   def players_params
-    params.permit(:name, :game_id, :id)
+    params.permit(:name, :game_id, :id, :secret_id)
   end
+
+
 end
