@@ -20,15 +20,60 @@ $(document).ready(function(){
 
   var url = window.location.href;
   var secretId;
-  var card_id;
+  // var round_card;
 
-    // function urlCheck(){
-    //   if (url.match(/chooser/i) == "chooser") {
-    //     $("#chooser_footer").css("position", "absolute");
-    //   }
-    //   secretIdCheck();
-    // }
-    // // urlCheck();
+
+    function regExCheck(){
+      var res = /\/join/g;
+      if (res.test(url) === true) {
+        $(".flash").fadeIn(2000).fadeOut(5000);
+      }
+    }
+    regExCheck();
+
+    function resizeToFit(){
+      var fontsize = $('#red_cards h3').css('font-size');
+      $('#red_cards h3').css('font-size', parseFloat(fontsize) - 1);
+
+      if($('#red_cards h3').width() >= $('div.red_clickable').width() && fontsize > 1){
+        resizeToFit();
+      }
+    }
+    resizeToFit();
+
+
+    countdown('countdown', 0, 59);
+    function countdown(element, minutes, seconds){
+      if (element) {}
+      var time = minutes*60 + seconds;
+      var interval = setInterval(function(){
+        var el = document.getElementById(element);
+        if (el){
+          if(time == 5){
+            $(el).css("color", "red");
+            // $(el).fadeOut(100).fadeIn(100);
+          }
+          if(time === 0){
+            el.innerHTML = ":00";
+
+            clearInterval(interval);
+            return;
+          }
+
+
+          var minutes = Math.floor(time/60);
+          if (minutes < 10) minutes = "0" + minutes;
+          var seconds = time % 60;
+          if (seconds < 10) seconds = "0" + seconds;
+          var text = ":" + seconds;
+          el.innerHTML = text;
+          time--;
+        }
+
+      }, 1000);
+    }
+
+
 
     function secretIdCheck(){
       var arr = url.split("");
@@ -41,38 +86,52 @@ $(document).ready(function(){
     }
 
     $("#choose_card").click(function(){
-      $("#choose_card").hide();
-      $("#round_card_reveal").show(2250);
+      $("#choose_card").fadeOut();
+      $("#round_card_reveal").fadeIn(2250);
     });
 
-    // function getGreenCard(secretId){
-    //   var cardId = $("#round_card_reveal h3").html();
-    //   // writeGreenCard(cardId, secretId);
-    // }
 
-    // function showLink(){
-    //   $('#overlay_trigger').click(function(){
-    //     preventDefault();
-    //     var elem = document.getElementById('url_link');
-    //     elem.value = window.location.href;
+    $('#overlay_trigger').click(function(){
+      // preventDefault();
+      var elem = document.getElementById('url_link');
+      elem.value = window.location.href;
 
-    //     $('#overlay2').fadeIn(600).delay(10000).fadeOut();
-    //     elem.select();
-    //   });
-    // }
+      $('#overlay_trigger').fadeOut();
+      $('#overlay2').fadeIn(600).delay(10000).fadeOut();
+      elem.select();
+      $('#overlay_trigger').fadeIn();
 
-    function writeRoundCard(roundCard){
-      $(".red_clickable").click(function(){
-        $.post("/chooser/:secret_id", {
-          adjective: roundCard.adjective,
-          description: roundCard.description
+    });
+
+
+
+    function writeRoundCard(round_card){
+      // alert(round_card);
+      $("#choose_card").click(function(){
+
+        // debugger;
+        $.post("/player/:secret_id", {
+          green_card_id: round_card
         }, function(responseData){
+          // alert("This is the response: " + responseData);
           // if (typeof responseData.new_group_id != "undefined"){
           //   window.location = window.location.href+"find/"+responseData.new_group_id;
           // }
         });
       });
     }
+    writeRoundCard();
+
+    function submitPlayerCard(card){
+      $(".red_clickable").click(function(){
+        $.post("/chooser/:secret_id", {
+
+        });
+      });
+    }
+
+
+
 
 
     // function writePlayerCard(card){
@@ -110,13 +169,13 @@ $(document).ready(function(){
     //     }
     //   });
     // }
-    function writeNewGame(){
-      $.post("/join", {
-      }, function(responseData){
-        if (typeof responseData.new_game_id != "undefined"){
-          window.location = window.location.href+"/games/"+responseData[new_game_id];
-        }
-      });
-    }
+    // function writeNewGame(){
+    //   $.post("/join", {
+    //   }, function(responseData){
+    //     if (typeof responseData.new_game_id != "undefined"){
+    //       window.location = window.location.href+"/games/"+responseData[new_game_id];
+    //     }
+    //   });
+    // }
 
 });

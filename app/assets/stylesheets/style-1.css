@@ -1206,8 +1206,8 @@
 				margin-top: -2px;
 
 				height: 5px;
-				border-top: solid 1px rgba(192,192,192,0.35);
-				border-bottom: solid 1px rgba(192,192,192,0.35);
+				border-top: solid 1px #bdbdbd;
+				border-bottom: solid 1px #bdbdbd;
 			}
 
 			#nav > ul:before
@@ -1683,7 +1683,7 @@
 			}
 
 			#round_card{
-				margin: 3% 0 10% 42.5%;
+				margin: 3% 0 7% 42.5%;
 				width: 15%;
 				height: 316px;
 				border-width: 3px;
@@ -1704,37 +1704,43 @@
 			#round_card h3{
 				color: #0a1f19;
 				position: absolute;
-				margin: 65px 0px 0px -13px;
-				-webkit-transform: rotate(-90deg);
-				-moz-transform: rotate(-90deg);
+				margin: 24px 0px 0px 4px;
+			/*	-webkit-transform: rotate(-90deg);
+				-moz-transform: rotate(-90deg);*/
 			}
 
 			img.green_apple{
-				margin-left: 6.5%;
+				margin-left: 5.5%;
 				position: absolute;
-				margin-top: 4%;
+				margin-top: 3%;
+				z-index: 0;
+				opacity: 0.7;
+				clip: rect(0, 116px, 180px, 0);
 
 			}
 
 
 
 			#round_card_reveal{
-				margin: 13% 0 10% 41%;
+				margin: 16% 0 10% 41%;
 				width: 18%;
 				height: 36%;
 				border-width: 3px;
 				border-color: #0a1f19;
 				border-style: solid;
 				border-radius: 7px;
+				display: inline-block;
 				display: none;
 				box-shadow: 9px 9px 5px #999999;
+				padding-bottom: 6%;
+				height: 350px;
 			}
 
 			#round_card_reveal p{
 				line-height: 1;
-				font-size: 15px;
+				font-size: 20px;
 				padding-top: 100%;
-				padding-left: 5%
+				padding-left: 1%
 			}
 
 			#round_card_reveal h3{
@@ -1746,9 +1752,9 @@
 			}
 
 			img.green_apple_reveal{
-				margin-left: 9%;
+				margin-left: 9.5%;
 				position: absolute;
-				margin-top: 6%;
+				margin-top: 4%;
 			}
 
 
@@ -1766,27 +1772,31 @@
 			}
 
 			#red_cards h3{
-				padding: 1.5% 0 0 2%;
+				padding: 1.5% 0 0 0.5%;
 				font-size: 15px;
 				color: #3D0000;
 				position: absolute;
+				z-index: 5;
 			}
 
 			#red_cards p{
 				width: 99%;
 				line-height: 1;
-				font-size: 10px;
-				padding-top: 95%;
-				padding-left: 1%;
-				text-align: justify;
+				font-size: 12px;
+				padding-top: 100%;
+				padding-left: 5%;
+				text-align: -webkit-left;
 				margin-bottom: 0;
 				font-weight: 500;
 			}
 
 			img.red_apple{
 				position: absolute;
-				margin-left: 0.5%;
-				margin-top: 3.4%;
+				margin-left: -1.4%;
+				margin-top: 3.1%;
+				opacity: 0.8;
+				clip: rect(0, 108px, 90px, 18px);
+				z-index: 0;
 
 			}
 
@@ -1801,6 +1811,7 @@
 
 			div.red_clickable{
 				height: inherit;
+				width: 122px;
 			}
 
 			/*.player_hand:first-child{
@@ -2034,31 +2045,31 @@
 			}
 
 			#overlay_trigger{
-				float: left;
+				position: absolute;
 				border-radius: 100%;
 				width: 6.5em;
 				height: 6.5em;
 				font-size: 1.25em;
 				color: #0a1f19;
-				background: #ffffff;
-				margin-left: 25%;
-				margin-top: 20%;
-				padding: 2.5em 0em 1em 0em;
-				text-align: center;
-				z-index: 2;
+				background: white;
+				margin-left: -29%;
+				margin-top: -14%;
+				padding: 2.3em 0em 1.5em 0em;
 				font-family: 'Source Sans Pro', sans-serif;
-				font-weight: 100;
+				text-align: center;
+				line-height: 1;
+				/*z-index: 2;*/
 			}
 
 			#overlay2 {
 			 /*visibility: hidden;*/
 			 display:none;
-			 position: fixed;
-			 left: 0px;
-			 top: 0px;
+			 position: absolute;
 			 width:100%;
 			 height:100%;
 			 text-align:center;
+			 margin-top: -45%;
+			 margin-left: -48%;
 			 /*z-index: 1000;*/
 			}
 
@@ -2074,11 +2085,63 @@
 
 			#overlay2 input{
 				width: 266px;
+				font-weight: 100;
+				font-size: 20px;
+				color: gray;
 			}
 
 			.chooser{
 				position: absolute;
 			}
+
+			#collect_red{
+				position: absolute;
+				border-radius: 100%;
+				width: 6.5em;
+				height: 6.5em;
+				font-size: 1.25em;
+				color: #0a1f19;
+				background: white;
+				margin-left: 35%;
+				margin-top: -14%;
+				padding: 2.3em 0em 1.5em 0em;
+				font-family: 'Source Sans Pro', sans-serif;
+				text-align: center;
+				line-height: 1;
+				z-index: 2;
+			}
+
+			#collect_red:hover{
+				color: #ffffff;
+				background: #660000;
+			}
+
+			#countdown{
+				text-decoration: none;
+				position: absolute;
+				right: 0;
+				margin-right: 11%;
+				border-radius: 100%;
+				width: 3.5em;
+				height: 3.5em;
+				font-size: 1.25em;
+				color: #0a1f19;
+				background: white;
+				padding-top: 1.85%;
+				padding-left: 2%;
+			}
+
+			div.flash{
+				display: none;
+				color: white;
+				font-size: 30px;
+				font-weight: 100;
+				margin-left: 37%;
+				padding-top: 11%;
+				position: absolute;
+
+			}
+
 
 
 			/*div.checkbox {

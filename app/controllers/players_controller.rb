@@ -2,21 +2,23 @@ class PlayersController < ApplicationController
 
   def show
     @player = current_player
-    new_game = false
+    # new_game = false
     if @player
       @game = Game.create
       game_id = @game.id
       @player[:game_id] = game_id
+      @player.save
     end
 
 
 
-    if @player.save
-      # link_to player_
-      # redirect_to :controller => 'games', :action => 'chooser'
-      # render :json => {:new_game_id => @game.secret_id}
 
-    end
+    # if @player.save
+    #   # link_to player_
+    #   # redirect_to :controller => 'games', :action => 'chooser'
+    #   # render :json => {:new_game_id => @game.secret_id}
+
+    # end
   end
 
 

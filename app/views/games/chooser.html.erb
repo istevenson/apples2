@@ -1,26 +1,30 @@
 
 
 
-<nav id="nav">
+<nav id="nav" class="non_home">
   <ul>
     <li><a href="">ApplesToo</a></li>
   </ul>
 </nav>
 <div id="game_body">
   <div id="send_link">
-  <div id="choose_card">Choose Green Card</div>
+  <div id="choose_card">Click to Choose a Green Card</div>
   <div id="round_card_reveal">
-    <div id="green_card">
-      <div id="green_clickable"><% current_card = get_random_green %>
+    <div id="green_card_reveal">
+      <div id="green_clickable"><% current_card = GreenCard.find(@game.green_card_id) %>
         <h3> <%= current_card.adjective %></h3>
-        <%=image_tag("green_apple4.png", size: "100x100", alt: "Green Apple", class: "green_apple")%>
+        <%=image_tag("green_apple4.png", size: "100x100", alt: "Green Apple", class: "green_apple_reveal")%>
         <p><%= current_card.description %></p>
         <script>
-          var round_card = <%= current_card %>
-          writeRoundCard(round_card)
+
         </script>
       </div>
     </div>
+    <div id="collect_red">Collect Player Cards</div>
+      <div id="overlay_trigger">Send Game Link</div>
+        <div id="overlay2">
+          <p>Copy this link: <input type="text" id="url_link"></input></p>
+        </div>
   </div>
 </div>
 

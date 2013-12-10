@@ -15,14 +15,23 @@ module GamesHelper
     end
   end
 
+  def get_reds
+    if @game
+      red_card_review = @game.red_cards
+
+      card_arr = []
+      red_card_review.each do |card|
+        if red_card
+          card_arr << card.attributes
+        end
+      end
+      ret_arr.to_json.html_safe
+    end
+  end
+
   def get_random_red
     random_id = Random.rand(1..1826)
-    @red_card = RedCard.find(random_id)
+    r = RedCard.find(random_id)
+    # r.game_id = @game.id
   end
-
-  def get_random_green
-    random_id = Random.rand(1..614)
-    @green_card = GreenCard.find(random_id)
-  end
-
 end

@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   # before_action :set_game, only: [:show, :edit, :update, :destroy]
   # before_action :authenticate_player!, only: [:show]
   # GET /games
@@ -90,6 +91,17 @@ class GamesController < ApplicationController
     secret_id = params[:secret_id]
     @game = Game.where("secret_id = '#{secret_id}'").first
 
+    random_id = Random.rand(1..614)
+    g = GreenCard.find(random_id)
+    # g.game_id = @game.id
+    @game.green_card_id = g.id
+    @game.save
+    # @green_card.to_json.html_safe
+
+
+    # @green_card = GreenCard.where("game_id = ?", params[:id])
+
+
     # if @game.green_card_id
     #   @green_card = GreenCard.find_by game_id: @game.id
     # end
@@ -102,11 +114,30 @@ class GamesController < ApplicationController
   end
 
   def game_player
-    # secret_id = params[:secret_id]
-    # @game = Game.where("secret_id = '#{secret_id}'").first
-    # @green_card = GreenCard.find_by game_id: @game_id
+    secret_id = params[:secret_id]
+    @game = Game.where("secret_id = '#{secret_id}'").first
 
-    @game = Game.where(:secret_id => params[:id]).first
+
+    # red_arr = []
+    # 7.times do |count|
+    #   random_id = Random.rand(1..1826)
+    #   r = RedCard.find(random_id)
+    #   r.game_id = @game.id
+    #   red_arr.push(r)
+    # end
+    # @game.save
+    # random_id = Random.rand(1..1826)
+    # r = RedCard.find(random_id)
+    # r.game_id = @game.id
+    # @game.save
+    # @red_card = RedCard.find(random_id)
+    # @red_card.to_json.html_safe
+
+    # @green_card = GreenCard.where("game_id = ?", @game.id)
+    # @green_card = GreenCard.find_by game_id: @game_id
+    # secret_id = params[:secret_id]
+    # @game = chooser.game
+    # @green_card = chooser.green_card
     # @green_card = GreenCard.where("game_id = ?", @game.id)
   end
 
