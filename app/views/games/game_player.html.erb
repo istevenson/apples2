@@ -24,79 +24,16 @@
   </div>
   <div id="player_body">
     <ul id="red_cards">
-      <li class="player_hand">
+      <% 1.upto(8) do %>
+      <% current_card = get_random_red %>
+      <li class="player_hand" id='redcard_<%= current_card.id %>'>
         <div class="red_clickable">
-        <% current_card = RedCard.find(get_random_red) %>
         <h3><%= current_card.noun %></h3>
         <%=image_tag("red_apple4.png", size: "80x80", alt: "Red Apple", class: "red_apple")%>
         <p><%= current_card.description %></p>
         </div>
       </li>
-
-      <li class="player_hand">
-        <div class="red_clickable">
-        <% current_card = RedCard.find(get_random_red) %>
-        <h3><%= current_card.noun %></h3>
-        <%=image_tag("red_apple4.png", size: "80x80", alt: "Red Apple", class: "red_apple")%>
-        <p><%= current_card.description %></p>
-        </div>
-      </li>
-
-      <li class="player_hand">
-        <div class="red_clickable">
-        <% current_card = RedCard.find(get_random_red) %>
-        <h3><%= current_card.noun %></h3>
-        <%=image_tag("red_apple4.png", size: "80x80", alt: "Red Apple", class: "red_apple")%>
-        <p><%= current_card.description %></p>
-        </div>
-      </li>
-
-      <li class="player_hand">
-        <div class="red_clickable">
-        <% current_card = RedCard.find(get_random_red) %>
-        <h3><%= current_card.noun %></h3>
-        <%=image_tag("red_apple4.png", size: "80x80", alt: "Red Apple", class: "red_apple")%>
-        <p><%= current_card.description %></p>
-        </div>
-      </li>
-
-      <li class="player_hand">
-        <div class="red_clickable">
-        <% current_card = RedCard.find(get_random_red) %>
-        <h3><%= current_card.noun %></h3>
-        <%=image_tag("red_apple4.png", size: "80x80", alt: "Red Apple", class: "red_apple")%>
-        <p><%= current_card.description %></p>
-        </div>
-      </li>
-
-      <li class="player_hand">
-        <div class="red_clickable">
-        <% current_card = RedCard.find(get_random_red) %>
-        <h3><%= current_card.noun %></h3>
-        <%=image_tag("red_apple4.png", size: "80x80", alt: "Red Apple", class: "red_apple")%>
-        <p><%= current_card.description %></p>
-        </div>
-      </li>
-
-      <li class="player_hand">
-        <div class="red_clickable">
-        <% current_card = RedCard.find(get_random_red) %>
-        <h3><%= current_card.noun %></h3>
-        <%=image_tag("red_apple4.png", size: "80x80", alt: "Red Apple", class: "red_apple")%>
-        <p><%= current_card.description %></p>
-        </div>
-      </li>
-
-      <li class="player_hand">
-        <div class="red_clickable">
-        <% current_card = RedCard.find(get_random_red) %>
-        <h3><%= current_card.noun %></h3>
-        <%=image_tag("red_apple4.png", size: "80x80", alt: "Red Apple", class: "red_apple")%>
-        <p><%= current_card.description %></p>
-        </div>
-      </li>
-
-
+      <% end %>
     </ul>
   </div>
 </div>

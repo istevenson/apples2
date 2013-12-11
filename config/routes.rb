@@ -16,6 +16,7 @@ Applestoo::Application.routes.draw do
 
   get '/join' => 'players#show'
   post '/join' => 'players#show'
+  resources :rounds
   # get '/join' => 'games#create'
   # get '/chooser/:secret_id' =>
   # get '/player/:secret_id' => 'games#show'

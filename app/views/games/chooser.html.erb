@@ -13,7 +13,7 @@
     <div id="green_card_reveal">
       <div id="green_clickable"><% current_card = GreenCard.find(@game.green_card_id) %>
         <h3> <%= current_card.adjective %></h3>
-        <%=image_tag("green_apple4.png", size: "100x100", alt: "Green Apple", class: "green_apple_reveal")%>
+        <%=image_tag("green_apple4.png", size: "200x200", alt: "Green Apple", class: "green_apple_reveal")%>
         <p><%= current_card.description %></p>
         <script>
 
@@ -25,6 +25,20 @@
         <div id="overlay2">
           <p>Copy this link: <input type="text" id="url_link"></input></p>
         </div>
+  </div>
+  <div id="player_body_reveal">
+    <ul id="red_cards_reveal">
+      <% 1.upto(8) do %>
+      <!-- <% current_card = get_random_red %> -->
+      <li class="player_hand_reveal" id='redcard_<%= current_card.id %>'>
+        <div class="red_clickable">
+        <!-- <h3><%= current_card.noun %></h3> -->
+        <%=image_tag("red_apple4.png", size: "80x80", alt: "Red Apple", class: "red_apple")%>
+        <!-- <p><%= current_card.description %></p> -->
+        </div>
+      </li>
+      <% end %>
+    </ul>
   </div>
 </div>
 

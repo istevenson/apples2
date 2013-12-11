@@ -32,6 +32,5 @@ module GamesHelper
   def get_random_red
     random_id = Random.rand(1..1826)
     r = RedCard.find(random_id)
-    # r.game_id = @game.id
   end
 end
